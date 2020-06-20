@@ -39,7 +39,7 @@ def load_faces(directory, n_faces):
     for filename in os.listdir(directory):
         pixels = load_image(directory + filename)
         face = extract_face(model, pixels)
-        if face in None:
+        if face is None:
             continue
         faces.append(face)
         print(f"{len(faces)} {face.shape}")
